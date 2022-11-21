@@ -40,7 +40,6 @@ class ToDoTile extends StatelessWidget {
           ),
           child: Row(
             children: [
-              // checkbox
               Checkbox(
                 value: isDone,
                 onChanged: (value) {
@@ -48,13 +47,14 @@ class ToDoTile extends StatelessWidget {
                 },
                 activeColor: Colors.black,
               ),
-
-              // task name
-              Text(
-                title,
-                style: TextStyle(
-                  decoration:
-                      isDone ? TextDecoration.lineThrough : TextDecoration.none,
+              Expanded(
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    decoration: isDone
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
+                  ),
                 ),
               ),
             ],

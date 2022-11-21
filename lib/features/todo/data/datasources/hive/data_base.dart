@@ -4,7 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo_app/features/todo/data/datasources/data_source.dart';
 import 'package:todo_app/features/todo/data/models/todo_model.dart';
 
-class LocalDataBase implements DataSource {
+class HiveDataBase implements DataSource {
   final toDoBox = Hive.box<ToDoModel>('ToDo');
 
   @override

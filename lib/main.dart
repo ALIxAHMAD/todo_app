@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
-import 'package:todo_app/features/todo/data/datasources/data_base.dart';
+import 'package:todo_app/features/todo/data/datasources/hive/data_base.dart';
 import 'package:todo_app/features/todo/data/models/todo_model.dart';
 import 'package:todo_app/features/todo/data/repositories/todo_repository_imp.dart';
 import 'features/todo/domain/repositories/todo_repository.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final localDataBase = LocalDataBase();
+  final localDataBase = HiveDataBase();
 
   @override
   Widget build(BuildContext context) {

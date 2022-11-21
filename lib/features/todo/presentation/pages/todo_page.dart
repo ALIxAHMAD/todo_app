@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo_app/features/todo/domain/repositories/todo_repository.dart';
 import 'package:todo_app/features/todo/presentation/cubit/todo_cubit.dart';
+import 'package:todo_app/features/todo/presentation/widgets/add_todo_card.dart';
 import 'package:todo_app/features/todo/presentation/widgets/todo_tile.dart';
 
 class HomePage extends StatefulWidget {
@@ -56,36 +57,7 @@ class ToDoScreenView extends StatelessWidget {
             itemCount: state.toDos.toDos.length + 1,
             itemBuilder: (context, index) {
               if (index == 0) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Card(
-                    elevation: 3,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TextFormField(
-                            controller: controller,
-                            onChanged: BlocProvider.of<TodoCubit>(context)
-                                .titleOnChange,
-                            decoration:
-                                const InputDecoration(hintText: 'Enter ToDo'),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: ElevatedButton(
-                            child: const Text('Add'),
-                            onPressed: () {
-                              BlocProvider.of<TodoCubit>(context).addTodo();
-                              controller.clear();
-                            },
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                );
+                return AddToDoCard(controller: controller);
               }
               final toDo = state.toDos.toDos[index - 1];
               return ToDoTile(
