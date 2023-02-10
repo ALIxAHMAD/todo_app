@@ -1,4 +1,4 @@
-import 'package:todo_app/features/todo/data/models/todo_model.dart';
+import '../models/todo_model.dart';
 
 abstract class DataSource {
   Future<ToDosModel> getToDos();

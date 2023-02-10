@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:todo_app/core/util/result/success.dart';
-import 'package:todo_app/features/todo/domain/entities/todo.dart';
+import '../../../../core/util/result/success.dart';
+import '../entities/todo.dart';
 import '../../../../core/util/result/failure.dart';
 
 abstract class ToDoRepository {

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:todo_app/core/util/result/failure.dart';
-import 'package:todo_app/core/util/result/success.dart';
-import 'package:todo_app/features/todo/domain/repositories/todo_repository.dart';
+import '../../../../core/util/result/failure.dart';
+import '../../../../core/util/result/success.dart';
+import '../repositories/todo_repository.dart';
 
 class DeleteToDoUseCase {
   final ToDoRepository repository;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
-import 'package:todo_app/features/todo/data/datasources/hive/data_base.dart';
-import 'package:todo_app/features/todo/data/models/todo_model.dart';
-import 'package:todo_app/features/todo/data/repositories/todo_repository_imp.dart';
+import 'features/todo/data/datasources/hive/data_base.dart';
+import 'features/todo/data/models/todo_model.dart';
+import 'features/todo/data/repositories/todo_repository_imp.dart';
 import 'features/todo/domain/repositories/todo_repository.dart';
 import 'features/todo/presentation/pages/todo_page.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
       },
       child: MaterialApp(
         home: const HomePage(),
-        theme: ThemeData(primarySwatch: Colors.green),
+        theme: ThemeData(primarySwatch: Colors.teal),
       ),
     );
   }

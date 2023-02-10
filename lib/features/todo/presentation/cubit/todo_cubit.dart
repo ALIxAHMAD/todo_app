@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app/features/todo/domain/entities/todo.dart';
-import 'package:todo_app/features/todo/domain/repositories/todo_repository.dart';
-import 'package:todo_app/features/todo/domain/usecases/add_todo.dart';
-import 'package:todo_app/features/todo/domain/usecases/delete_todo.dart';
-import 'package:todo_app/features/todo/domain/usecases/get_todos.dart';
-import 'package:todo_app/features/todo/domain/usecases/update_todo.dart';
+import '../../domain/entities/todo.dart';
+import '../../domain/repositories/todo_repository.dart';
+import '../../domain/usecases/add_todo.dart';
+import '../../domain/usecases/delete_todo.dart';
+import '../../domain/usecases/get_todos.dart';
+import '../../domain/usecases/update_todo.dart';
 
 part 'todo_state.dart';
 

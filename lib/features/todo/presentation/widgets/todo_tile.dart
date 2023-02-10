@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:todo_app/features/todo/presentation/cubit/todo_cubit.dart';
+import '../cubit/todo_cubit.dart';
 
 class ToDoTile extends StatelessWidget {
   final String title;
@@ -16,51 +16,23 @@ class ToDoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Slidable(
-        endActionPane: ActionPane(
-          motion: const StretchMotion(),
-          children: [
-            SlidableAction(
-              onPressed: (context) {
-                BlocProvider.of<TodoCubit>(context).deleteToDo(id);
-              },
-              icon: Icons.delete,
-              backgroundColor: Colors.red,
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ],
-        ),
-        child: Container(
-          padding: const EdgeInsets.all(24),
-          decoration: BoxDecoration(
-            color: Colors.green,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Row(
-            children: [
-              Checkbox(
-                value: isDone,
-                onChanged: (value) {
-                  BlocProvider.of<TodoCubit>(context).updateTodo(id, !isDone);
-                },
-                activeColor: Colors.black,
-              ),
-              Expanded(
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    decoration: isDone
-                        ? TextDecoration.lineThrough
-                        : TextDecoration.none,
-                  ),
-                ),
-              ),
-            ],
-          ),
+    return ListTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          decoration: isDone ? TextDecoration.lineThrough : TextDecoration.none,
         ),
       ),
+      trailing: Checkbox(
+        activeColor: Colors.indigo,
+        value: isDone,
+        onChanged: (value) {
+          BlocProvider.of<TodoCubit>(context).updateTodo(id, !isDone);
+        },
+      ),
+      onLongPress: () {
+        BlocProvider.of<TodoCubit>(context).deleteToDo(id);
+      },
     );
   }
 }
