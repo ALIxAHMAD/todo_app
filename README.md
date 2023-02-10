@@ -9,7 +9,9 @@ Simple todo app written with clean architecture
     - delete todo
 
 ## Screenshots 
+<table>
   <tr>
     <td><img src="screenshots/screen1.png" width=318  height=552></td>
     <td><img src="screenshots/screen2.png" width=318  height=552></td>
-  </tr>
+     </tr>
+ </table>
