@@ -1,5 +1,5 @@
 # todo_app
-Simple todo app written with clean architecture
+Simple flutter todo app written with clean architecture
   - cubit for state management
   - hive for database
   - todo 
