@@ -11,7 +11,15 @@ class UpdateToDoUseCase {
     this.repository,
   );
 
-  Future<Either<Failure, Success>> call(int id, bool isDone) async {
-    return await repository.updateTodo(id, isDone);
+  Future<Either<Failure, Success>> call(
+    int id,
+    bool isDone,
+    String title,
+  ) async {
+    return await repository.updateTodo(
+      id,
+      isDone,
+      title,
+    );
   }
 }

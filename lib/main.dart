@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
       },
       child: MaterialApp(
         home: const HomePage(),
-        theme: ThemeData(primarySwatch: Colors.teal),
+        theme: ThemeData(primarySwatch: Colors.green),
       ),
     );
   }

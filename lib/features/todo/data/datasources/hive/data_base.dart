@@ -43,7 +43,7 @@ class HiveDataBase implements DataSource {
   }
 
   @override
-  Future<void> updateToDo(int id, bool isDone) async {
+  Future<void> updateToDo(int id, bool isDone, String title) async {
     var todo = toDoBox.get(id);
     if (todo == null) {
       throw Exception();
@@ -51,7 +51,7 @@ class HiveDataBase implements DataSource {
     await toDoBox.put(
         todo.id,
         ToDoModel(
-          title: todo.title,
+          title: title,
           isDone: isDone,
           id: todo.id,
         ));

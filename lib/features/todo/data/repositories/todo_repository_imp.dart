@@ -48,9 +48,10 @@ class ToDoRepositoryImp implements ToDoRepository {
   }
 
   @override
-  Future<Either<Failure, Success>> updateTodo(int id, bool isDone) async {
+  Future<Either<Failure, Success>> updateTodo(
+      int id, bool isDone, String title) async {
     try {
-      await dataSource.updateToDo(id, isDone);
+      await dataSource.updateToDo(id, isDone, title);
       return Right(Success());
     } catch (e) {
       return Left(DataFailure(e.toString()));

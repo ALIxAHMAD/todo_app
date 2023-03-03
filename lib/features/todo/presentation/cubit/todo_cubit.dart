@@ -57,8 +57,11 @@ class TodoCubit extends Cubit<TodoState> {
     });
   }
 
-  updateTodo(int id, bool isDone) async {
-    final response = await _updateToDoUseCase(id, isDone);
+  updateTodo(int id, bool isDone, String title) async {
+    if (title == "") {
+      return;
+    }
+    final response = await _updateToDoUseCase(id, isDone, title);
     response.fold((l) {
       emit(state.copyWith(errorMessage: l.message));
     }, (r) {
