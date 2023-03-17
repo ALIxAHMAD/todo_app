@@ -6,6 +6,7 @@ Simple flutter todo app written with clean architecture
     - list all todos
     - add todo
     - mark as done
+    - update todo
     - delete todo
 
 ## Screenshots 
